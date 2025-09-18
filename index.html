@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résilience Café - Artisan Café & Cozy Atmosphere</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Parisienne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-icon">☕</span>
+                        <span class="logo-text">Résilience</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">Histoire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#menu" class="nav-link">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#atmosphere" class="nav-link">Galerie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#events" class="nav-link">Événements</a>
+                    </li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <video class="hero-video" autoplay muted loop playsinline>
+                    <source src="coffeeback.mp4" type="video/mp4">
+                    <!-- Fallback for browsers that don't support video -->
+                    <div class="hero-image"></div>
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="title-line">Résilience</span>
+                        <span class="title-line">Café</span>
+                    </h1>
+                    <p class="hero-subtitle">Café artisanal, fait avec <span class="amour-highlight">amour</span></p>
+                </div>
+            </div>
+        </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-video-container">
+                        <video class="about-video" autoplay muted loop playsinline controls>
+                            <source src="storyr.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="section-header">
+                        <span class="section-subtitle">À propos de Résilience</span>
+                        <h2 class="section-title">Notre <span class="resilience-highlight">Histoire</span></h2>
+                    </div>
+                    <p class="about-text">
+                        Résilience Café, c'est une histoire parisienne de passion et de partage.
+                    </p>
+                    <p class="about-text">
+                        Ici, café, sucré et salé sont préparés avec soin et amour.
+                    </p>
+                    <p class="about-text">
+                        Notre équipe vous accueille dans une ambiance conviviale et chaleureuse.
+                    </p>
+                    <p class="about-text">
+                        Un lieu simple, vivant et gourmand pour tous vos moments.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">☕</div>
+                            <div class="feature-content">
+                                <h3>Torréfaction en petites quantités</h3>
+                                <p>Des grains fraîchement torréfiés chaque semaine en petits lots</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🌍</div>
+                            <div class="feature-content">
+                                <h3>Approvisionnement éthique</h3>
+                                <p>Relations directes et équitables avec les producteurs de café</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🏠</div>
+                            <div class="feature-content">
+                                <h3>Esprit de communauté</h3>
+                                <p>Un lieu chaleureux où les voisins deviennent des amis</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        Découvrir Notre Histoire
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Menu Café</span>
+                <h2 class="section-title">L'expérience <span class="resilience-highlight">Résilience</span></h2>
+                <p class="section-description">
+                    Découvrez notre sélection artisanale, préparée avec passion dans l'esprit <span class="resilience-highlight">Résilience</span>
+                </p>
+            </div>
+
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">Tout</button>
+                <button class="category-btn" data-category="cafe">Boissons</button>
+                <button class="category-btn" data-category="sucre">Sucré</button>
+                <button class="category-btn" data-category="sale">Salé</button>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-item" data-category="cafe">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&h=250&fit=crop&crop=center" alt="Espresso Résilience" class="menu-img">
+                        <div class="menu-item-overlay">
+                            <button class="btn btn-small btn-white">Commander</button>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Espresso <span class="resilience-highlight">Résilience</span></h3>
+                        <p class="menu-item-description">Café corsé aux notes de chocolat noir et caramel</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">3,25€</span>
+                            <div class="menu-item-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">(4.9)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="cafe">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=250&fit=crop&crop=center" alt="Cappuccino" class="menu-img">
+                        <div class="menu-item-overlay">
+                            <button class="btn btn-small btn-white">Commander</button>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Cappuccino</h3>
+                        <p class="menu-item-description">Équilibre parfait d'espresso, lait vapeur et mousse veloutée</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">4,75€</span>
+                            <div class="menu-item-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">(5.0)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="sucre">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=250&fit=crop&crop=center" alt="Croissant aux Amandes" class="menu-img">
+                        <div class="menu-item-overlay">
+                            <button class="btn btn-small btn-white">Commander</button>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Croissant <span class="resilience-highlight">Résilience</span></h3>
+                        <p class="menu-item-description">Croissant artisanal garni de crème d'amande et amandes grillées</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">4,50€</span>
+                            <div class="menu-item-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-text">(4.6)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="cafe">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=250&fit=crop&crop=center" alt="Cold Brew" class="menu-img">
+                        <div class="menu-item-overlay">
+                            <button class="btn btn-small btn-white">Commander</button>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Café Glacé</h3>
+                        <p class="menu-item-description">Café infusé à froid, onctueux et rafraîchissant</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">4,25€</span>
+                            <div class="menu-item-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-text">(4.7)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="sucre">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=250&fit=crop&crop=center" alt="Muffin" class="menu-img">
+                        <div class="menu-item-overlay">
+                            <button class="btn btn-small btn-white">Commander</button>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Muffin du Jour</h3>
+                        <p class="menu-item-description">Muffin artisanal aux fruits de saison, recette <span class="resilience-highlight">Résilience</span></p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">3,50€</span>
+                            <div class="menu-item-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-text">(4.5)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="sale">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=250&fit=crop&crop=center" alt="Sandwich" class="menu-img">
+                        <div class="menu-item-overlay">
+                            <button class="btn btn-small btn-white">Commander</button>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Sandwich <span class="resilience-highlight">Résilience</span></h3>
+                        <p class="menu-item-description">Pain artisanal garni d'ingrédients frais et locaux</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-price">6,50€</span>
+                            <div class="menu-item-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-text">(4.4)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-cta">
+                <button class="btn btn-primary btn-large">Voir le Menu Complet</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Carousel Section -->
+    <section id="atmosphere" class="instagram-carousel-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Notre Instagram</span>
+                <h2 class="section-title">Moments <span class="resilience-highlight">Résilience</span></h2>
+                <p class="section-description">
+                    Découvrez l'atmosphère chaleureuse de notre café à travers nos moments partagés
+                </p>
+            </div>
+
+            <div class="instagram-carousel">
+                <!-- Navigation Arrows -->
+                <button class="carousel-nav carousel-prev" id="carouselPrev">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="carousel-nav carousel-next" id="carouselNext">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide active">
+                            <div class="slide-content">
+                                <img src="im.jpg" alt="Moment Résilience 1" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im2.jpg" alt="Moment Résilience 2" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im3.jpg" alt="Moment Résilience 3" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im4.jpg" alt="Moment Résilience 4" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im5.jpg" alt="Moment Résilience 5" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 6 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im6.jpg" alt="Moment Résilience 6" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 7 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im7.jpg" alt="Moment Résilience 7" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 8 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im8.jpg" alt="Moment Résilience 8" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 9 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im9.jpg" alt="Moment Résilience 9" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 10 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im10.jpg" alt="Moment Résilience 10" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 11 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im11.jpg" alt="Moment Résilience 11" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 12 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im12.jpg" alt="Moment Résilience 12" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 13 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im13.jpg" alt="Moment Résilience 13" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 14 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im14.jpg" alt="Moment Résilience 14" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 15 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im15.jpg" alt="Moment Résilience 15" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 16 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im16.jpg" alt="Moment Résilience 16" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 17 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im17.jpg" alt="Moment Résilience 17" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 18 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im18.jpg" alt="Moment Résilience 18" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 19 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im19.jpg" alt="Moment Résilience 19" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 20 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <img src="im20.jpg" alt="Moment Résilience 20" class="slide-image">
+                                <div class="slide-overlay">
+                                    <div class="slide-info">
+                                        <h3 class="slide-title">Moment <span class="resilience-highlight">Résilience</span></h3>
+                                        <p class="slide-description">Découvrez notre univers</p>
+                                        <div class="instagram-meta">
+                                            <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+                                                <svg class="instagram-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                                <span class="instagram-handle">resilience.cafe.paris</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Dots Navigation -->
+                    <div class="carousel-dots" id="carouselDots">
+                        <button class="carousel-dot active" data-slide="0"></button>
+                        <button class="carousel-dot" data-slide="1"></button>
+                        <button class="carousel-dot" data-slide="2"></button>
+                        <button class="carousel-dot" data-slide="3"></button>
+                        <button class="carousel-dot" data-slide="4"></button>
+                        <button class="carousel-dot" data-slide="5"></button>
+                        <button class="carousel-dot" data-slide="6"></button>
+                        <button class="carousel-dot" data-slide="7"></button>
+                        <button class="carousel-dot" data-slide="8"></button>
+                        <button class="carousel-dot" data-slide="9"></button>
+                        <button class="carousel-dot" data-slide="10"></button>
+                        <button class="carousel-dot" data-slide="11"></button>
+                        <button class="carousel-dot" data-slide="12"></button>
+                        <button class="carousel-dot" data-slide="13"></button>
+                        <button class="carousel-dot" data-slide="14"></button>
+                        <button class="carousel-dot" data-slide="15"></button>
+                        <button class="carousel-dot" data-slide="16"></button>
+                        <button class="carousel-dot" data-slide="17"></button>
+                        <button class="carousel-dot" data-slide="18"></button>
+                        <button class="carousel-dot" data-slide="19"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos <span class="resilience-highlight">Événements</span></h2>
+                <p class="section-subtitle">Découvrez nos moments de partage et nos prochains rendez-vous</p>
+            </div>
+            
+            <div class="events-grid">
+                <!-- Past Event Video -->
+                <div class="past-event">
+                    <h3 class="events-subtitle">Dernier Événement</h3>
+                    <div class="event-video-container">
+                        <video class="event-video" autoplay muted loop playsinline controls poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiM4QjQ1MTMiLz48L3N2Zz4=">
+                            <source src="eventr.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la lecture vidéo.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-description">
+                        <h4>Soirée <span class="resilience-highlight">Résilience</span> - Henne - Caligraphie - Fleur en tricot - Illustration</h4>
+                        <p>C'était le 13/07/2025 et c'était bien au delà de nos espérances. ✨️</p>
+                        <p>En plus du fait que vous soyez presque tous venus nous rendre visite ce jour là, on a senti une énergie absolument indescriptible de bienveillance, de douceur, de quiétude et d'amitié. ☀️</p>
+                        <p>Merci de tout cœur a toutes les personnes ayant contribuer a faire de ce moment un moment précieux. 💛</p>
+                    </div>
+                </div>
+                
+                <!-- Upcoming Events -->
+                <div class="upcoming-events">
+                    <h3 class="events-subtitle">Prochains Événements</h3>
+                    <div class="events-list">
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="date-day">15</span>
+                                <span class="date-month">Déc</span>
+                            </div>
+                            <div class="event-info">
+                                <h4>Atelier <span class="resilience-highlight">Résilience</span> - Latte Art</h4>
+                                <p>Apprenez les techniques de latte art avec nos baristas experts. Matériel fourni.</p>
+                                <div class="event-meta">
+                                    <span class="event-time">14h00 - 16h00</span>
+                                    <span class="event-price">25€</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="date-day">22</span>
+                                <span class="date-month">Déc</span>
+                            </div>
+                            <div class="event-info">
+                                <h4>Soirée Jazz & <span class="resilience-highlight">Café</span></h4>
+                                <p>Une soirée musicale avec des artistes locaux et nos meilleures créations café.</p>
+                                <div class="event-meta">
+                                    <span class="event-time">19h00 - 22h00</span>
+                                    <span class="event-price">Gratuit</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="date-day">28</span>
+                                <span class="date-month">Déc</span>
+                            </div>
+                            <div class="event-info">
+                                <h4>Dégustation <span class="resilience-highlight">Résilience</span> - Origines</h4>
+                                <p>Découvrez les différentes origines de nos cafés et leurs saveurs uniques.</p>
+                                <div class="event-meta">
+                                    <span class="event-time">15h00 - 17h00</span>
+                                    <span class="event-price">20€</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="events-cta">
+                        <p class="events-note">Suivez-nous sur Instagram pour ne rien manquer de nos événements !</p>
+                        <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            Suivre sur Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-icon">☕</span>
+                        <span class="logo-text">Résilience</span>
+                    </a>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/people/R%C3%A9silience-Caf%C3%A9/61575747585120/?ref=ac_edit_ig_profile_ac" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/resilience.cafe.paris/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                    <div class="footer-contact">
+                        <ul>
+                            <li>hello@resiliencecafe.com</li>
+                            <li>0759655999</li>
+                            <li>135 Rue Lamarck, 75018 Paris</li>
+                        </ul>
+                    </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Résilience Café. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

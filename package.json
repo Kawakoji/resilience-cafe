@@ -1,0 +1,37 @@
+{
+  "name": "resilience-cafe",
+  "version": "1.0.0",
+  "description": "Résilience Café - A beautiful, responsive coffee shop website with rustic Parisian design",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "coffee",
+    "cafe",
+    "website",
+    "responsive",
+    "parisian",
+    "rustic",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Kawakoji",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kawakoji/resilience-cafe.git"
+  },
+  "homepage": "https://github.com/Kawakoji/resilience-cafe#readme",
+  "bugs": {
+    "url": "https://github.com/Kawakoji/resilience-cafe/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
