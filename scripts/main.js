@@ -424,10 +424,14 @@ function initializeVideoBackground() {
         
         heroVideo.addEventListener('canplay', () => {
             console.log('Video can start playing');
-            // Ensure video plays smoothly
-            heroVideo.play().catch(e => {
-                console.log('Autoplay prevented:', e);
-            });
+            // Ensure video plays smoothly with a small delay to avoid race conditions
+            setTimeout(() => {
+                if (heroVideo.paused) {
+                    heroVideo.play().catch(e => {
+                        console.log('Autoplay prevented:', e);
+                    });
+                }
+            }, 100);
         });
         
         heroVideo.addEventListener('error', (e) => {
@@ -443,9 +447,15 @@ function initializeVideoBackground() {
         const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    heroVideo.play().catch(e => console.log('Play prevented:', e));
+                    // Only try to play if video is paused
+                    if (heroVideo.paused) {
+                        heroVideo.play().catch(e => console.log('Play prevented:', e));
+                    }
                 } else {
-                    heroVideo.pause();
+                    // Only pause if video is playing
+                    if (!heroVideo.paused) {
+                        heroVideo.pause();
+                    }
                 }
             });
         }, { threshold: 0.5 });
@@ -471,10 +481,14 @@ function initializeAboutVideo() {
         
         aboutVideo.addEventListener('canplay', () => {
             console.log('About video can start playing');
-            // Try to play the video
-            aboutVideo.play().catch(e => {
-                console.log('About video autoplay prevented:', e);
-            });
+            // Add small delay to avoid race conditions
+            setTimeout(() => {
+                if (aboutVideo.paused) {
+                    aboutVideo.play().catch(e => {
+                        console.log('About video autoplay prevented:', e);
+                    });
+                }
+            }, 100);
         });
         
         aboutVideo.addEventListener('error', (e) => {
@@ -485,11 +499,15 @@ function initializeAboutVideo() {
         const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Video is visible, ensure it's playing
-                    aboutVideo.play().catch(e => console.log('About video play prevented:', e));
+                    // Only try to play if video is paused
+                    if (aboutVideo.paused) {
+                        aboutVideo.play().catch(e => console.log('About video play prevented:', e));
+                    }
                 } else {
-                    // Video is not visible, pause to save resources
-                    aboutVideo.pause();
+                    // Only pause if video is playing
+                    if (!aboutVideo.paused) {
+                        aboutVideo.pause();
+                    }
                 }
             });
         }, { threshold: 0.5 });
@@ -515,9 +533,14 @@ function initializeEventVideo() {
         
         eventVideo.addEventListener('canplay', () => {
             console.log('Event video can start playing');
-            eventVideo.play().catch(e => { 
-                console.log('Event video autoplay prevented:', e); 
-            });
+            // Add small delay to avoid race conditions
+            setTimeout(() => {
+                if (eventVideo.paused) {
+                    eventVideo.play().catch(e => { 
+                        console.log('Event video autoplay prevented:', e); 
+                    });
+                }
+            }, 100);
         });
         
         eventVideo.addEventListener('error', (e) => { 
@@ -528,9 +551,15 @@ function initializeEventVideo() {
         const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    eventVideo.play().catch(e => console.log('Event video play prevented:', e));
+                    // Only try to play if video is paused
+                    if (eventVideo.paused) {
+                        eventVideo.play().catch(e => console.log('Event video play prevented:', e));
+                    }
                 } else {
-                    eventVideo.pause();
+                    // Only pause if video is playing
+                    if (!eventVideo.paused) {
+                        eventVideo.pause();
+                    }
                 }
             });
         }, { threshold: 0.5 });
