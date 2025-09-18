@@ -417,37 +417,18 @@ function initializeVideoBackground() {
     const heroVideo = document.querySelector('.hero-video');
     
     if (heroVideo) {
-        let isInitializing = true;
-        let playPromise = null;
+        console.log('Initializing hero video');
         
-        // Optimize video loading
-        heroVideo.addEventListener('loadstart', () => {
-            console.log('Video loading started');
-        });
-        
-        heroVideo.addEventListener('canplay', () => {
-            console.log('Video can start playing');
-            // Only auto-play on initial load
-            if (isInitializing) {
-                isInitializing = false;
-                setTimeout(() => {
-                    if (heroVideo.paused && !playPromise) {
-                        playPromise = heroVideo.play().catch(e => {
-                            console.log('Autoplay prevented:', e);
-                            playPromise = null;
-                        });
-                        if (playPromise) {
-                            playPromise.then(() => {
-                                playPromise = null;
-                            });
-                        }
-                    }
-                }, 200);
-            }
+        // Simple approach: just try to play when ready
+        heroVideo.addEventListener('loadeddata', () => {
+            console.log('Hero video loaded, attempting to play');
+            heroVideo.play().catch(e => {
+                console.log('Hero video autoplay prevented (normal on some browsers):', e.name);
+            });
         });
         
         heroVideo.addEventListener('error', (e) => {
-            console.log('Video error:', e);
+            console.log('Hero video error:', e);
             // Fallback to static background
             const heroImage = document.querySelector('.hero-image');
             if (heroImage) {
@@ -455,40 +436,25 @@ function initializeVideoBackground() {
             }
         });
         
-        // Debounced play/pause function
-        let observerTimeout;
-        const debouncedVideoControl = (shouldPlay) => {
-            clearTimeout(observerTimeout);
-            observerTimeout = setTimeout(() => {
-                if (shouldPlay && heroVideo.paused && !playPromise) {
-                    playPromise = heroVideo.play().catch(e => {
-                        console.log('Play prevented:', e);
-                        playPromise = null;
-                    });
-                    if (playPromise) {
-                        playPromise.then(() => {
-                            playPromise = null;
-                        });
-                    }
-                } else if (!shouldPlay && !heroVideo.paused && !playPromise) {
-                    heroVideo.pause();
-                }
-            }, 100);
-        };
-        
-        // Pause video when not visible (performance optimization)
-        const videoObserver = new IntersectionObserver((entries) => {
+        // Simple intersection observer for performance
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (!isInitializing) { // Don't interfere with initial loading
-                    debouncedVideoControl(entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    if (heroVideo.paused) {
+                        heroVideo.play().catch(() => {}); // Silent fail
+                    }
+                } else {
+                    if (!heroVideo.paused) {
+                        heroVideo.pause();
+                    }
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.1, rootMargin: '50px' });
         
-        // Wait before observing to avoid initial conflicts
+        // Observe after a delay to ensure video is loaded
         setTimeout(() => {
-            videoObserver.observe(heroVideo);
-        }, 1000);
+            observer.observe(heroVideo);
+        }, 2000);
         
         // Handle mobile data saving
         if (navigator.connection && navigator.connection.saveData) {
@@ -502,78 +468,43 @@ function initializeAboutVideo() {
     const aboutVideo = document.querySelector('.about-video');
     
     if (aboutVideo) {
-        let isInitializing = true;
-        let playPromise = null;
+        console.log('Initializing about video');
         
-        // Ensure video loads and plays properly
-        aboutVideo.addEventListener('loadstart', () => {
-            console.log('About video loading started');
-        });
-        
-        aboutVideo.addEventListener('canplay', () => {
-            console.log('About video can start playing');
-            // Only auto-play on initial load
-            if (isInitializing) {
-                isInitializing = false;
-                setTimeout(() => {
-                    if (aboutVideo.paused && !playPromise) {
-                        playPromise = aboutVideo.play().catch(e => {
-                            console.log('About video autoplay prevented:', e);
-                            playPromise = null;
-                        });
-                        if (playPromise) {
-                            playPromise.then(() => {
-                                playPromise = null;
-                            });
-                        }
-                    }
-                }, 300);
-            }
+        // Simple approach: just try to play when ready
+        aboutVideo.addEventListener('loadeddata', () => {
+            console.log('About video loaded, attempting to play');
+            aboutVideo.play().catch(e => {
+                console.log('About video autoplay prevented (normal on some browsers):', e.name);
+            });
         });
         
         aboutVideo.addEventListener('error', (e) => {
             console.log('About video error:', e);
         });
         
-        // Debounced play/pause function
-        let observerTimeout;
-        const debouncedVideoControl = (shouldPlay) => {
-            clearTimeout(observerTimeout);
-            observerTimeout = setTimeout(() => {
-                if (shouldPlay && aboutVideo.paused && !playPromise) {
-                    playPromise = aboutVideo.play().catch(e => {
-                        console.log('About video play prevented:', e);
-                        playPromise = null;
-                    });
-                    if (playPromise) {
-                        playPromise.then(() => {
-                            playPromise = null;
-                        });
-                    }
-                } else if (!shouldPlay && !aboutVideo.paused && !playPromise) {
-                    aboutVideo.pause();
-                }
-            }, 150);
-        };
-        
-        // Handle video visibility for performance
-        const videoObserver = new IntersectionObserver((entries) => {
+        // Simple intersection observer for performance
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (!isInitializing) { // Don't interfere with initial loading
-                    debouncedVideoControl(entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    if (aboutVideo.paused) {
+                        aboutVideo.play().catch(() => {}); // Silent fail
+                    }
+                } else {
+                    if (!aboutVideo.paused) {
+                        aboutVideo.pause();
+                    }
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.1, rootMargin: '50px' });
         
-        // Wait before observing to avoid initial conflicts
+        // Observe after a delay to ensure video is loaded
         setTimeout(() => {
-            videoObserver.observe(aboutVideo);
-        }, 1200);
+            observer.observe(aboutVideo);
+        }, 3000);
         
         // Handle mobile data saving
         if (navigator.connection && navigator.connection.saveData) {
-            // If user has data saving enabled, don't autoplay
-            aboutVideo.removeAttribute('autoplay');
+            console.log('Data saving mode detected, skipping autoplay');
         }
     }
 }
@@ -583,76 +514,43 @@ function initializeEventVideo() {
     const eventVideo = document.querySelector('.event-video');
     
     if (eventVideo) {
-        let isInitializing = true;
-        let playPromise = null;
+        console.log('Initializing event video');
         
-        eventVideo.addEventListener('loadstart', () => { 
-            console.log('Event video loading started'); 
-        });
-        
-        eventVideo.addEventListener('canplay', () => {
-            console.log('Event video can start playing');
-            // Only auto-play on initial load
-            if (isInitializing) {
-                isInitializing = false;
-                setTimeout(() => {
-                    if (eventVideo.paused && !playPromise) {
-                        playPromise = eventVideo.play().catch(e => { 
-                            console.log('Event video autoplay prevented:', e);
-                            playPromise = null;
-                        });
-                        if (playPromise) {
-                            playPromise.then(() => {
-                                playPromise = null;
-                            });
-                        }
-                    }
-                }, 400);
-            }
+        // Simple approach: just try to play when ready
+        eventVideo.addEventListener('loadeddata', () => {
+            console.log('Event video loaded, attempting to play');
+            eventVideo.play().catch(e => {
+                console.log('Event video autoplay prevented (normal on some browsers):', e.name);
+            });
         });
         
         eventVideo.addEventListener('error', (e) => { 
             console.log('Event video error:', e); 
         });
         
-        // Debounced play/pause function
-        let observerTimeout;
-        const debouncedVideoControl = (shouldPlay) => {
-            clearTimeout(observerTimeout);
-            observerTimeout = setTimeout(() => {
-                if (shouldPlay && eventVideo.paused && !playPromise) {
-                    playPromise = eventVideo.play().catch(e => {
-                        console.log('Event video play prevented:', e);
-                        playPromise = null;
-                    });
-                    if (playPromise) {
-                        playPromise.then(() => {
-                            playPromise = null;
-                        });
-                    }
-                } else if (!shouldPlay && !eventVideo.paused && !playPromise) {
-                    eventVideo.pause();
-                }
-            }, 200);
-        };
-        
-        // Intersection Observer to pause/play video based on visibility
-        const videoObserver = new IntersectionObserver((entries) => {
+        // Simple intersection observer for performance
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (!isInitializing) { // Don't interfere with initial loading
-                    debouncedVideoControl(entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    if (eventVideo.paused) {
+                        eventVideo.play().catch(() => {}); // Silent fail
+                    }
+                } else {
+                    if (!eventVideo.paused) {
+                        eventVideo.pause();
+                    }
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.1, rootMargin: '50px' });
         
-        // Wait before observing to avoid initial conflicts
+        // Observe after a delay to ensure video is loaded
         setTimeout(() => {
-            videoObserver.observe(eventVideo);
-        }, 1500);
+            observer.observe(eventVideo);
+        }, 4000);
         
         // Check for data saving mode
         if (navigator.connection && navigator.connection.saveData) {
-            eventVideo.removeAttribute('autoplay');
+            console.log('Data saving mode detected, skipping autoplay');
         }
     }
 }
