@@ -380,6 +380,80 @@ document.addEventListener('DOMContentLoaded', initializeLazyLoading);
 
 // ===== UTILITY FUNCTIONS =====
 
+// Add click-to-play functionality for videos
+function addClickToPlay(video, message = 'Click to play video') {
+    const container = video.parentElement;
+    
+    // Create play button overlay
+    const playOverlay = document.createElement('div');
+    playOverlay.className = 'video-play-overlay';
+    playOverlay.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: opacity 0.3s ease;
+    `;
+    
+    const playButton = document.createElement('div');
+    playButton.style.cssText = `
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    `;
+    
+    playButton.innerHTML = `
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="#8B4513">
+            <path d="M8 5v14l11-7z"/>
+        </svg>
+    `;
+    
+    playOverlay.appendChild(playButton);
+    
+    // Add text below button
+    const playText = document.createElement('div');
+    playText.textContent = message;
+    playText.style.cssText = `
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 14px;
+        text-align: center;
+    `;
+    playOverlay.appendChild(playText);
+    
+    container.style.position = 'relative';
+    container.appendChild(playOverlay);
+    
+    // Click handler
+    playOverlay.addEventListener('click', () => {
+        video.play().then(() => {
+            playOverlay.style.opacity = '0';
+            setTimeout(() => {
+                if (playOverlay.parentElement) {
+                    playOverlay.parentElement.removeChild(playOverlay);
+                }
+            }, 300);
+        }).catch(e => {
+            console.log('Failed to play video:', e);
+        });
+    });
+}
+
 // Smooth scroll to element
 function scrollToElement(elementId, offset = 0) {
     const element = document.getElementById(elementId);
@@ -418,23 +492,57 @@ function initializeVideoBackground() {
     
     if (heroVideo) {
         console.log('Initializing hero video');
+        console.log('Hero video src:', heroVideo.currentSrc || heroVideo.src);
+        
+        // Check if video file exists
+        heroVideo.addEventListener('loadstart', () => {
+            console.log('Hero video started loading');
+        });
+        
+        heroVideo.addEventListener('progress', () => {
+            console.log('Hero video loading progress');
+        });
         
         // Simple approach: just try to play when ready
         heroVideo.addEventListener('loadeddata', () => {
             console.log('Hero video loaded, attempting to play');
-            heroVideo.play().catch(e => {
-                console.log('Hero video autoplay prevented (normal on some browsers):', e.name);
+            heroVideo.play().then(() => {
+                console.log('Hero video is playing successfully!');
+            }).catch(e => {
+                console.log('Hero video autoplay prevented:', e.name);
+                // Add click-to-play functionality
+                addClickToPlay(heroVideo, 'Click to play background video');
             });
         });
         
+        // Try to play on user interaction
+        document.addEventListener('click', () => {
+            if (heroVideo.paused) {
+                heroVideo.play().then(() => {
+                    console.log('Hero video started after user interaction');
+                }).catch(() => {});
+            }
+        }, { once: true });
+        
         heroVideo.addEventListener('error', (e) => {
             console.log('Hero video error:', e);
+            console.log('Hero video error code:', heroVideo.error?.code);
+            console.log('Hero video error message:', heroVideo.error?.message);
             // Fallback to static background
             const heroImage = document.querySelector('.hero-image');
             if (heroImage) {
                 heroImage.style.display = 'block';
             }
         });
+        
+        // Test if video file is accessible
+        setTimeout(() => {
+            if (heroVideo.networkState === 3) { // NETWORK_NO_SOURCE
+                console.log('Hero video: No source found or network error');
+            } else if (heroVideo.readyState === 0) { // HAVE_NOTHING
+                console.log('Hero video: Still loading after 3 seconds');
+            }
+        }, 3000);
         
         // Simple intersection observer for performance
         const observer = new IntersectionObserver((entries) => {
