@@ -56,12 +56,12 @@ function initializeNavigation() {
 // ===== MOBILE MENU =====
 function initializeMobileMenu() {
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const mobileNavMenu = document.querySelector('.mobile-nav');
     const navLinks = document.querySelectorAll('.nav-link');
     
-    if (mobileToggle && navMenu) {
+    if (mobileToggle && mobileNavMenu) {
         mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+            mobileNavMenu.classList.toggle('active');
             mobileToggle.classList.toggle('active');
             document.body.classList.toggle('menu-open');
         });
@@ -69,7 +69,7 @@ function initializeMobileMenu() {
         // Close menu when clicking on nav links
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
+                mobileNavMenu.classList.remove('active');
                 mobileToggle.classList.remove('active');
                 document.body.classList.remove('menu-open');
             });

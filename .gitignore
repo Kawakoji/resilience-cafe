@@ -61,7 +61,7 @@ temp/
 .yarn-integrity
 
 # Video files (these should be added manually if needed)
-*.mp4
+# *.mp4
 *.mov
 *.avi
 *.mkv

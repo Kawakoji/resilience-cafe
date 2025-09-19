@@ -395,11 +395,8 @@ p {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: linear-gradient(180deg, rgba(245, 245, 220, 0.98) 0%, rgba(245, 245, 220, 0.95) 100%);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid var(--medium-brown);
+  background: transparent;
   transition: var(--transition-normal);
-  box-shadow: var(--shadow-sm);
 }
 
 .navbar {
@@ -410,6 +407,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .nav-brand .logo {
@@ -496,6 +494,54 @@ p {
   background-color: var(--text-dark);
   border-radius: var(--border-radius-sm);
   transition: var(--transition-fast);
+}
+
+/* ===== NEW HEADER LAYOUT - DESKTOP & MOBILE ===== */
+
+/* Desktop Navigation - Left aligned */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+  margin-left: var(--space-lg);
+}
+
+/* Social Icons - Right aligned */
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-dark);
+  transition: var(--transition-normal);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 69, 19, 0.2);
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Mobile Brand - Hidden on desktop */
+.mobile-brand {
+  display: none;
+}
+
+/* Mobile Navigation - Hidden on desktop */
+.mobile-nav {
+  display: none;
 }
 
 /* ===== HERO SECTION - MINIMAL & CLEAN ===== */
@@ -2104,6 +2150,23 @@ textarea.form-input {
   
   .mobile-menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
+  }
+  
+  /* Mobile Header Layout */
+  .desktop-nav {
+    display: none;
+  }
+  
+  .desktop-social {
+    display: none;
+  }
+  
+  .mobile-brand {
+    display: block;
+  }
+  
+  .mobile-nav {
+    display: flex;
   }
   
   body.menu-open {

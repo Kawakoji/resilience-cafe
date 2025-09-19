@@ -44,3 +44,4 @@ git push origin main
 - The carousel will not work without the im*.jpg files
 - The hero section will fall back to a static image without coffeeback.mp4
 - The about and events sections will show placeholders without their respective videos
+
