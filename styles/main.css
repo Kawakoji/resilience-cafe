@@ -424,6 +424,7 @@ p {
 
 .navbar {
   padding: var(--space-lg) 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .navbar .container {
@@ -434,17 +435,20 @@ p {
   transition: all 0.3s ease-in-out;
 }
 
-/* Homepage navbar - flush edges, no padding */
-.header.homepage .navbar .container {
-  padding: 0 var(--space-lg);
-  justify-content: space-between;
-}
+/* Desktop-only navbar layout changes */
+@media (min-width: 769px) {
+  /* Homepage navbar - flush edges, no padding */
+  .header.homepage .navbar .container {
+    padding: 0 var(--space-lg);
+    justify-content: space-between;
+  }
 
-/* Non-homepage navbar - centered with large padding */
-.header.with-background .navbar .container {
-  padding: 0 var(--space-5xl);
-  justify-content: center;
-  gap: var(--space-4xl);
+  /* Non-homepage navbar - centered with large padding */
+  .header.with-background .navbar .container {
+    padding: 0 var(--space-5xl);
+    justify-content: center;
+    gap: var(--space-4xl);
+  }
 }
 
 .nav-brand .logo {
@@ -544,29 +548,32 @@ p {
   transition: all 0.3s ease-in-out;
 }
 
-/* Homepage navigation - flush to left edge, larger, white text */
-.header.homepage .desktop-nav {
-  margin-left: 0;
-  gap: var(--space-3xl);
-}
+/* Desktop-only navigation positioning and styling */
+@media (min-width: 769px) {
+  /* Homepage navigation - flush to left edge, larger, white text */
+  .header.homepage .desktop-nav {
+    margin-left: 0;
+    gap: var(--space-3xl);
+  }
 
-.header.homepage .nav-link {
-  color: white;
-  font-size: var(--fs-lg);
-  font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
+  .header.homepage .nav-link {
+    color: white;
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
 
-/* Non-homepage navigation - centered with padding, normal size, dark text */
-.header.with-background .desktop-nav {
-  margin-left: 0;
-}
+  /* Non-homepage navigation - centered with padding, normal size, dark text */
+  .header.with-background .desktop-nav {
+    margin-left: 0;
+  }
 
-.header.with-background .nav-link {
-  color: var(--text-dark);
-  font-size: var(--fs-base);
-  font-weight: 500;
-  text-shadow: none;
+  .header.with-background .nav-link {
+    color: var(--text-dark);
+    font-size: var(--fs-base);
+    font-weight: 500;
+    text-shadow: none;
+  }
 }
 
 /* Social Icons - Right aligned */
@@ -597,40 +604,43 @@ p {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Homepage social icons - flush to right edge, white, larger */
-.header.homepage .nav-social {
-  margin-right: 0; /* Flush to right edge */
-}
+/* Desktop-only social icons positioning and styling */
+@media (min-width: 769px) {
+  /* Homepage social icons - flush to right edge, white, larger */
+  .header.homepage .nav-social {
+    margin-right: 0; /* Flush to right edge */
+  }
 
-.header.homepage .social-link {
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  width: 45px;
-  height: 45px;
-}
+  .header.homepage .social-link {
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    width: 45px;
+    height: 45px;
+  }
 
-.header.homepage .social-link:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-  border-color: rgba(255, 255, 255, 0.7);
-}
+  .header.homepage .social-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.7);
+  }
 
-/* Non-homepage social icons - centered with padding, normal size, dark colors */
-.header.with-background .nav-social {
-  margin-right: 0;
-}
+  /* Non-homepage social icons - centered with padding, normal size, dark colors */
+  .header.with-background .nav-social {
+    margin-right: 0;
+  }
 
-.header.with-background .social-link {
-  color: var(--text-dark);
-  border: 1px solid rgba(139, 69, 19, 0.3);
-  width: 40px;
-  height: 40px;
-}
+  .header.with-background .social-link {
+    color: var(--text-dark);
+    border: 1px solid rgba(139, 69, 19, 0.3);
+    width: 40px;
+    height: 40px;
+  }
 
-.header.with-background .social-link:hover {
-  background: rgba(139, 69, 19, 0.1);
-  color: var(--primary-color);
-  border-color: rgba(139, 69, 19, 0.5);
+  .header.with-background .social-link:hover {
+    background: rgba(139, 69, 19, 0.1);
+    color: var(--primary-color);
+    border-color: rgba(139, 69, 19, 0.5);
+  }
 }
 
 /* Mobile Brand - Hidden on desktop */
@@ -838,9 +848,7 @@ p {
   background: var(--black); /* Black background for letterboxing */
 }
 
-.about-video:hover {
-  /* No filter - maintain original video colors on hover */
-}
+/* .about-video:hover removed - no hover effects needed */
 
 /* Custom video controls styling - removed to prevent any color interference */
 /* All video control styling removed to ensure original video colors */
