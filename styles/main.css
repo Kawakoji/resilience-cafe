@@ -548,7 +548,7 @@ p {
   align-items: center;
   gap: var(--space-2xl);
   margin-left: var(--space-lg);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Desktop-only navigation positioning and styling */
@@ -585,7 +585,7 @@ p {
   display: flex;
   align-items: center;
   gap: var(--space-lg);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .social-link {
@@ -613,7 +613,7 @@ p {
   /* Homepage social icons - flush to viewport right edge, white, larger */
   .header.homepage .nav-social {
     margin-right: calc(-1 * var(--space-lg)); /* Offset container padding to reach viewport edge */
-    padding-right: var(--space-lg); /* Add back minimal spacing from absolute edge */
+    padding-right: 0; /* No padding - truly flush with viewport edge */
   }
 
   .header.homepage .social-link {

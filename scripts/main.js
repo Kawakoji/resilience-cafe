@@ -25,6 +25,7 @@ function initializeNavigation() {
     let isScrollingUp = true;
     let currentSection = 'home';
     let scrollTimeout;
+    let hasBeenHidden = false; // Track if header has been hidden due to scrolling
     
     // Initialize header state
     updateHeaderState();
@@ -45,17 +46,23 @@ function initializeNavigation() {
             if (currentScrollY > 100) {
                 if (isScrollingUp) {
                     header.classList.remove('hidden');
+                    // Mark that header has been shown after being hidden
+                    if (hasBeenHidden) {
+                        hasBeenHidden = false;
+                    }
                 } else {
                     header.classList.add('hidden');
+                    hasBeenHidden = true; // Mark that header has been hidden
                 }
             } else {
                 header.classList.remove('hidden');
+                hasBeenHidden = false; // Reset when at top
             }
             
             // Detect current section
             detectCurrentSection();
             
-            // Update header state based on current section
+            // Update header state based on current section and scroll behavior
             updateHeaderState();
         }, 10); // Debounce scroll events
     });
@@ -84,12 +91,14 @@ function initializeNavigation() {
         });
     }
     
-    // Update header appearance based on current section
+    // Update header appearance based on current section and scroll behavior
     function updateHeaderState() {
-        if (currentSection === 'home') {
+        if (currentSection === 'home' && !hasBeenHidden) {
+            // Homepage with no background (only when header hasn't been hidden by scrolling)
             header.classList.add('homepage');
             header.classList.remove('with-background');
         } else {
+            // Show background when not on homepage OR when header has been hidden/shown by scrolling
             header.classList.remove('homepage');
             header.classList.add('with-background');
         }
