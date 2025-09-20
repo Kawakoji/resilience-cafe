@@ -431,6 +431,20 @@ p {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Homepage navbar - flush edges, no padding */
+.header.homepage .navbar .container {
+  padding: 0 var(--space-lg);
+  justify-content: space-between;
+}
+
+/* Non-homepage navbar - centered with large padding */
+.header.with-background .navbar .container {
+  padding: 0 var(--space-5xl);
+  justify-content: center;
+  gap: var(--space-4xl);
 }
 
 .nav-brand .logo {
@@ -530,9 +544,9 @@ p {
   transition: all 0.3s ease-in-out;
 }
 
-/* Homepage navigation - larger, more left-aligned, white text */
+/* Homepage navigation - flush to left edge, larger, white text */
 .header.homepage .desktop-nav {
-  margin-left: var(--space-sm);
+  margin-left: 0;
   gap: var(--space-3xl);
 }
 
@@ -543,9 +557,9 @@ p {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Non-homepage navigation - normal size, centered, dark text */
+/* Non-homepage navigation - centered with padding, normal size, dark text */
 .header.with-background .desktop-nav {
-  margin-left: var(--space-xl);
+  margin-left: 0;
 }
 
 .header.with-background .nav-link {
@@ -583,9 +597,9 @@ p {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Homepage social icons - white, positioned closer to center */
+/* Homepage social icons - flush to right edge, white, larger */
 .header.homepage .nav-social {
-  margin-right: -50px; /* Move closer to center */
+  margin-right: 0; /* Flush to right edge */
 }
 
 .header.homepage .social-link {
@@ -601,7 +615,7 @@ p {
   border-color: rgba(255, 255, 255, 0.7);
 }
 
-/* Non-homepage social icons - normal size, dark colors */
+/* Non-homepage social icons - centered with padding, normal size, dark colors */
 .header.with-background .nav-social {
   margin-right: 0;
 }
