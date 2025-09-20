@@ -15,42 +15,108 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeEventVideo();
 });
 
-// ===== NAVIGATION =====
+// ===== DYNAMIC HEADER NAVIGATION =====
 function initializeNavigation() {
     const header = document.querySelector('.header');
     const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
     
-    // Header scroll effect
+    let lastScrollY = window.scrollY;
+    let isScrollingUp = true;
+    let currentSection = 'home';
+    let scrollTimeout;
+    
+    // Initialize header state
+    updateHeaderState();
+    
+    // Scroll detection for header show/hide and section detection
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-            header.style.boxShadow = 'none';
-        }
+        const currentScrollY = window.scrollY;
+        
+        // Clear timeout to prevent excessive updates
+        clearTimeout(scrollTimeout);
+        
+        scrollTimeout = setTimeout(() => {
+            // Determine scroll direction
+            isScrollingUp = currentScrollY < lastScrollY;
+            lastScrollY = currentScrollY;
+            
+            // Hide/show header based on scroll direction
+            if (currentScrollY > 100) {
+                if (isScrollingUp) {
+                    header.classList.remove('hidden');
+                } else {
+                    header.classList.add('hidden');
+                }
+            } else {
+                header.classList.remove('hidden');
+            }
+            
+            // Detect current section
+            detectCurrentSection();
+            
+            // Update header state based on current section
+            updateHeaderState();
+        }, 10); // Debounce scroll events
     });
     
-    // Active navigation link based on scroll position
-    window.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll('section[id]');
-        const scrollPosition = window.scrollY + 200;
+    // Detect which section is currently in view
+    function detectCurrentSection() {
+        let current = 'home';
         
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
+            const sectionTop = section.offsetTop - 150;
             const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
             
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        currentSection = current;
+        
+        // Update active nav link
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // Update header appearance based on current section
+    function updateHeaderState() {
+        if (currentSection === 'home') {
+            header.classList.add('homepage');
+            header.classList.remove('with-background');
+        } else {
+            header.classList.remove('homepage');
+            header.classList.add('with-background');
+        }
+    }
+
+    // Smooth scroll navigation
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                // Show header when navigating
+                header.classList.remove('hidden');
+                
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
     });
+    
+    // Initial section detection
+    detectCurrentSection();
 }
 
 // ===== MOBILE MENU =====

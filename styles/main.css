@@ -396,7 +396,30 @@ p {
   right: 0;
   z-index: 1000;
   background: transparent;
-  transition: var(--transition-normal);
+  transition: all 0.3s ease-in-out;
+  transform: translateY(0);
+}
+
+/* Header hidden state */
+.header.hidden {
+  transform: translateY(-100%);
+}
+
+/* Header with background (non-homepage sections) */
+.header.with-background {
+  background: rgba(245, 245, 220, 0.95);
+  backdrop-filter: blur(15px);
+  margin: 8px 12px 0 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+}
+
+/* Homepage header state */
+.header.homepage {
+  background: transparent;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .navbar {
@@ -504,6 +527,32 @@ p {
   align-items: center;
   gap: var(--space-2xl);
   margin-left: var(--space-lg);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Homepage navigation - larger, more left-aligned, white text */
+.header.homepage .desktop-nav {
+  margin-left: var(--space-sm);
+  gap: var(--space-3xl);
+}
+
+.header.homepage .nav-link {
+  color: white;
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Non-homepage navigation - normal size, centered, dark text */
+.header.with-background .desktop-nav {
+  margin-left: var(--space-xl);
+}
+
+.header.with-background .nav-link {
+  color: var(--text-dark);
+  font-size: var(--fs-base);
+  font-weight: 500;
+  text-shadow: none;
 }
 
 /* Social Icons - Right aligned */
@@ -511,6 +560,7 @@ p {
   display: flex;
   align-items: center;
   gap: var(--space-lg);
+  transition: all 0.3s ease-in-out;
 }
 
 .social-link {
@@ -522,7 +572,7 @@ p {
   border-radius: 50%;
   background: transparent;
   color: var(--text-dark);
-  transition: var(--transition-normal);
+  transition: all 0.3s ease-in-out;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -531,6 +581,42 @@ p {
   color: var(--primary-color);
   transform: translateY(-2px);
   border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Homepage social icons - white, positioned closer to center */
+.header.homepage .nav-social {
+  margin-right: -50px; /* Move closer to center */
+}
+
+.header.homepage .social-link {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  width: 45px;
+  height: 45px;
+}
+
+.header.homepage .social-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Non-homepage social icons - normal size, dark colors */
+.header.with-background .nav-social {
+  margin-right: 0;
+}
+
+.header.with-background .social-link {
+  color: var(--text-dark);
+  border: 1px solid rgba(139, 69, 19, 0.3);
+  width: 40px;
+  height: 40px;
+}
+
+.header.with-background .social-link:hover {
+  background: rgba(139, 69, 19, 0.1);
+  color: var(--primary-color);
+  border-color: rgba(139, 69, 19, 0.5);
 }
 
 /* Mobile Brand - Hidden on desktop */
@@ -2164,6 +2250,49 @@ textarea.form-input {
   
   .mobile-nav {
     display: flex;
+  }
+  
+  /* Mobile Header States */
+  .header.with-background {
+    margin: 6px 8px 0 8px;
+    border-radius: 10px;
+  }
+  
+  /* Mobile homepage brand - white, larger */
+  .header.homepage .mobile-brand .logo-text {
+    color: white;
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .header.homepage .mobile-brand .logo-icon {
+    color: white;
+    font-size: var(--fs-xl);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Mobile non-homepage brand - normal size, dark */
+  .header.with-background .mobile-brand .logo-text {
+    color: var(--text-dark);
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    text-shadow: none;
+  }
+  
+  .header.with-background .mobile-brand .logo-icon {
+    color: var(--text-dark);
+    font-size: var(--fs-lg);
+    text-shadow: none;
+  }
+  
+  /* Mobile menu toggle colors */
+  .header.homepage .mobile-menu-toggle span {
+    background-color: white;
+  }
+  
+  .header.with-background .mobile-menu-toggle span {
+    background-color: var(--text-dark);
   }
   
   body.menu-open {
