@@ -396,7 +396,7 @@ p {
   right: 0;
   z-index: 1000;
   background: transparent;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
   transform: translateY(0);
 }
 
@@ -412,6 +412,7 @@ p {
   margin: 8px 12px 0 12px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 /* Homepage header state */
@@ -420,11 +421,12 @@ p {
   margin: 0;
   border-radius: 0;
   box-shadow: none;
+  transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .navbar {
   padding: var(--space-lg) 0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .navbar .container {
@@ -432,7 +434,7 @@ p {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 /* Desktop-only navbar layout changes */
@@ -548,7 +550,7 @@ p {
   align-items: center;
   gap: var(--space-2xl);
   margin-left: var(--space-lg);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 /* Desktop-only navigation positioning and styling */
@@ -585,7 +587,7 @@ p {
   display: flex;
   align-items: center;
   gap: var(--space-lg);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .social-link {
@@ -597,7 +599,7 @@ p {
   border-radius: 50%;
   background: transparent;
   color: var(--text-dark);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -612,8 +614,12 @@ p {
 @media (min-width: 769px) {
   /* Homepage social icons - flush to viewport right edge, white, larger */
   .header.homepage .nav-social {
-    margin-right: calc(-1 * var(--space-lg)); /* Offset container padding to reach viewport edge */
-    padding-right: 0; /* No padding - truly flush with viewport edge */
+    position: absolute;
+    right: 0; /* Absolutely flush with viewport right edge */
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 0;
+    padding-right: 0;
   }
 
   .header.homepage .social-link {
@@ -631,6 +637,8 @@ p {
 
   /* Non-homepage social icons - centered with padding, normal size, dark colors */
   .header.with-background .nav-social {
+    position: static; /* Return to normal flow */
+    transform: none;
     margin-right: 0;
   }
 
