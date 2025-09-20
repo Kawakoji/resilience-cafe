@@ -396,7 +396,7 @@ p {
   right: 0;
   z-index: 1000;
   background: transparent;
-  transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
   transform: translateY(0);
 }
 
@@ -412,7 +412,7 @@ p {
   margin: 8px 12px 0 12px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
-  transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 /* Homepage header state */
@@ -421,12 +421,12 @@ p {
   margin: 0;
   border-radius: 0;
   box-shadow: none;
-  transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .navbar {
   padding: var(--space-lg) 0;
-  transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .navbar .container {
@@ -434,7 +434,7 @@ p {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 /* Desktop-only navbar layout changes */
@@ -550,7 +550,7 @@ p {
   align-items: center;
   gap: var(--space-2xl);
   margin-left: var(--space-lg);
-  transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 /* Desktop-only navigation positioning and styling */
@@ -560,6 +560,8 @@ p {
     margin-left: calc(-1 * var(--space-lg)); /* Offset container padding to reach viewport edge */
     padding-left: var(--space-lg); /* Add back minimal spacing from absolute edge */
     gap: var(--space-3xl);
+    transform: translateX(0); /* Smooth positioning baseline */
+    transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   .header.homepage .nav-link {
@@ -567,11 +569,14 @@ p {
     font-size: var(--fs-lg);
     font-weight: 600;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   /* Non-homepage navigation - centered with padding, normal size, dark text */
   .header.with-background .desktop-nav {
     margin-left: 0;
+    transform: translateX(0);
+    transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   .header.with-background .nav-link {
@@ -579,6 +584,7 @@ p {
     font-size: var(--fs-base);
     font-weight: 500;
     text-shadow: none;
+    transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 }
 
@@ -587,7 +593,7 @@ p {
   display: flex;
   align-items: center;
   gap: var(--space-lg);
-  transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .social-link {
@@ -599,7 +605,7 @@ p {
   border-radius: 50%;
   background: transparent;
   color: var(--text-dark);
-  transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -620,6 +626,7 @@ p {
     transform: translateY(-50%);
     margin-right: 0;
     padding-right: 0;
+    transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   .header.homepage .social-link {
@@ -627,6 +634,7 @@ p {
     border: 1px solid rgba(255, 255, 255, 0.4);
     width: 45px;
     height: 45px;
+    transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   .header.homepage .social-link:hover {
@@ -640,6 +648,7 @@ p {
     position: static; /* Return to normal flow */
     transform: none;
     margin-right: 0;
+    transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   .header.with-background .social-link {
@@ -647,6 +656,7 @@ p {
     border: 1px solid rgba(139, 69, 19, 0.3);
     width: 40px;
     height: 40px;
+    transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   .header.with-background .social-link:hover {
