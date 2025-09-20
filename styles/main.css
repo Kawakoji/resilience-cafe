@@ -612,10 +612,10 @@ p {
 
 /* Desktop-only social icons positioning and styling */
 @media (min-width: 769px) {
-  /* Homepage social icons - flush to viewport right edge, white, larger */
+  /* Homepage social icons - close to viewport right edge with small spacing, white, larger */
   .header.homepage .nav-social {
     position: absolute;
-    right: 0; /* Absolutely flush with viewport right edge */
+    right: var(--space-md); /* Small space from viewport right edge */
     top: 50%;
     transform: translateY(-50%);
     margin-right: 0;
