@@ -437,9 +437,12 @@ p {
 
 /* Desktop-only navbar layout changes */
 @media (min-width: 769px) {
-  /* Homepage navbar - flush edges, no padding */
+  /* Homepage navbar - full viewport width, no container constraints */
   .header.homepage .navbar .container {
+    max-width: none;
+    width: 100vw;
     padding: 0 var(--space-lg);
+    margin: 0;
     justify-content: space-between;
   }
 
@@ -550,9 +553,10 @@ p {
 
 /* Desktop-only navigation positioning and styling */
 @media (min-width: 769px) {
-  /* Homepage navigation - flush to left edge, larger, white text */
+  /* Homepage navigation - flush to viewport left edge, larger, white text */
   .header.homepage .desktop-nav {
-    margin-left: 0;
+    margin-left: calc(-1 * var(--space-lg)); /* Offset container padding to reach viewport edge */
+    padding-left: var(--space-lg); /* Add back minimal spacing from absolute edge */
     gap: var(--space-3xl);
   }
 
@@ -606,9 +610,10 @@ p {
 
 /* Desktop-only social icons positioning and styling */
 @media (min-width: 769px) {
-  /* Homepage social icons - flush to right edge, white, larger */
+  /* Homepage social icons - flush to viewport right edge, white, larger */
   .header.homepage .nav-social {
-    margin-right: 0; /* Flush to right edge */
+    margin-right: calc(-1 * var(--space-lg)); /* Offset container padding to reach viewport edge */
+    padding-right: var(--space-lg); /* Add back minimal spacing from absolute edge */
   }
 
   .header.homepage .social-link {
