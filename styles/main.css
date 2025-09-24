@@ -2644,6 +2644,20 @@ textarea.form-input {
     background-clip: text !important;
     text-shadow: none !important;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .amour-highlight:hover {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 25%, #f5deb3 50%, #daa520 75%, #b8860b 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.6)) brightness(1.2) !important;
+    transform: scale(1.05);
+    animation: sparkle 1.5s ease-in-out infinite;
   }
   
   .hero-video {
@@ -2758,6 +2772,38 @@ textarea.form-input {
   background-clip: text !important;
   text-shadow: none !important;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== EFFET SCINTILLANT AU HOVER ===== */
+.hero-subtitle-container .amour-highlight:hover,
+.hero .hero-background .hero-overlay .hero-subtitle-container .amour-highlight:hover {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 25%, #f5deb3 50%, #daa520 75%, #b8860b 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.6)) brightness(1.2) !important;
+  transform: scale(1.05);
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+/* Animation scintillante */
+@keyframes sparkle {
+  0%, 100% {
+    filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.6)) brightness(1.2);
+  }
+  25% {
+    filter: drop-shadow(0 6px 12px rgba(255, 215, 0, 0.8)) brightness(1.4);
+  }
+  50% {
+    filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.6)) brightness(1.2);
+  }
+  75% {
+    filter: drop-shadow(0 6px 12px rgba(255, 215, 0, 0.8)) brightness(1.4);
+  }
 }
 
 /* Classe pour assurer la lisibilité sur fond clair */
