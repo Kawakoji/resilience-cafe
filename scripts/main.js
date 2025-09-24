@@ -158,6 +158,17 @@ function initializeMobileMenu() {
     
     // Test temporaire supprimé
     
+    // Fermer le menu si on passe de mobile à desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && mobileNavMenu.classList.contains('active')) {
+            mobileNavMenu.style.display = 'none';
+            mobileNavMenu.classList.remove('active');
+            mobileToggle.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            console.log('Menu fermé automatiquement - passage en desktop');
+        }
+    });
+    
     if (mobileToggle && mobileNavMenu) {
         console.log('Adding click listener to mobile toggle');
         mobileToggle.addEventListener('click', (e) => {
@@ -177,25 +188,36 @@ function initializeMobileMenu() {
             
             // Solution qui fonctionne à coup sûr
             if (mobileNavMenu.classList.contains('active')) {
-                mobileNavMenu.style.cssText = `
-                    position: fixed !important;
-                    top: 0 !important;
-                    left: 0 !important;
-                    right: 0 !important;
-                    bottom: 0 !important;
-                    width: 100vw !important;
-                    height: 100vh !important;
-                    background: rgba(139, 69, 19, 0.95) !important;
-                    backdrop-filter: blur(10px) !important;
-                    z-index: 9999 !important;
-                    display: flex !important;
-                    flex-direction: column !important;
-                    justify-content: center !important;
-                    align-items: center !important;
-                    list-style: none !important;
-                    margin: 0 !important;
-                    padding: 0 !important;
-                `;
+                // Vérifier si on est sur mobile
+                if (window.innerWidth <= 768) {
+                    mobileNavMenu.style.cssText = `
+                        position: fixed !important;
+                        top: 0 !important;
+                        left: 0 !important;
+                        right: 0 !important;
+                        bottom: 0 !important;
+                        width: 100vw !important;
+                        height: 100vh !important;
+                        background: rgba(139, 69, 19, 0.95) !important;
+                        backdrop-filter: blur(10px) !important;
+                        z-index: 9999 !important;
+                        display: flex !important;
+                        flex-direction: column !important;
+                        justify-content: center !important;
+                        align-items: center !important;
+                        list-style: none !important;
+                        margin: 0 !important;
+                        padding: 20px !important;
+                        overflow-y: auto !important;
+                    `;
+                } else {
+                    // Sur desktop, cacher le menu
+                    mobileNavMenu.style.display = 'none';
+                    mobileNavMenu.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    return;
+                }
                 
                 // Styliser les liens du menu
                 const navLinks = mobileNavMenu.querySelectorAll('.nav-link');
