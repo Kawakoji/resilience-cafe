@@ -134,7 +134,27 @@ function initializeMobileMenu() {
     const mobileNavMenu = document.querySelector('.mobile-nav');
     const navLinks = document.querySelectorAll('.nav-link');
     
-    console.log('Mobile menu init:', { mobileToggle, mobileNavMenu, navLinksCount: navLinks.length });
+    console.log('Mobile menu init:', { 
+        mobileToggle: mobileToggle, 
+        mobileNavMenu: mobileNavMenu, 
+        navLinksCount: navLinks.length,
+        toggleExists: !!mobileToggle,
+        menuExists: !!mobileNavMenu
+    });
+    
+    if (mobileToggle) {
+        console.log('Mobile toggle button found:', mobileToggle);
+        console.log('Toggle button classes:', mobileToggle.className);
+    } else {
+        console.error('Mobile toggle button NOT FOUND!');
+    }
+    
+    if (mobileNavMenu) {
+        console.log('Mobile nav menu found:', mobileNavMenu);
+        console.log('Menu classes:', mobileNavMenu.className);
+    } else {
+        console.error('Mobile nav menu NOT FOUND!');
+    }
     
     // Test temporaire - forcer l'affichage du menu pour debug
     if (mobileNavMenu) {
@@ -145,13 +165,21 @@ function initializeMobileMenu() {
     }
     
     if (mobileToggle && mobileNavMenu) {
+        console.log('Adding click listener to mobile toggle');
         mobileToggle.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log('Menu toggle clicked');
+            e.stopPropagation();
+            console.log('Menu toggle clicked - BEFORE toggle');
+            console.log('Current classes:', mobileNavMenu.className);
+            
             mobileNavMenu.classList.toggle('active');
             mobileToggle.classList.toggle('active');
             document.body.classList.toggle('menu-open');
+            
+            console.log('Menu toggle clicked - AFTER toggle');
+            console.log('New classes:', mobileNavMenu.className);
             console.log('Menu active:', mobileNavMenu.classList.contains('active'));
+            console.log('Menu display style:', window.getComputedStyle(mobileNavMenu).display);
         });
         
         // Close menu when clicking on nav links
