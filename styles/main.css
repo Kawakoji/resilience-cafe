@@ -815,7 +815,7 @@ p {
     font-size: clamp(3rem, 6vw, 6rem);
     font-weight: 600;
     letter-spacing: 0.1em; /* Tracking réduit pour que tout le texte soit visible */
-    color: white !important; /* Blanc pur pour le titre */
+    color: #ffffff !important; /* Blanc pur pour le titre - spécificité élevée */
     text-transform: uppercase;
     margin: 0 auto;
     text-shadow: 
@@ -837,7 +837,7 @@ p {
 
   .hero-main-title:hover {
     transform: scale(1.05);
-    color: white !important; /* Reste blanc au hover */
+    color: #ffffff !important; /* Reste blanc au hover */
     text-shadow: 
       0 6px 12px rgba(0, 0, 0, 0.5),
       0 3px 6px rgba(0, 0, 0, 0.3);
@@ -850,6 +850,7 @@ p {
     bottom: var(--space-lg);
     left: var(--space-lg);
     z-index: 3; /* Au-dessus de l'overlay */
+    transform: none; /* S'assurer qu'il n'y a pas de transformation */
   }
 
   .hero-subtitle-container .hero-subtitle {
@@ -2712,6 +2713,15 @@ textarea.form-input {
 }
 
 /* ===== TITRE PRINCIPAL - STYLES AVANCÉS ===== */
+/* Force la couleur blanche avec spécificité maximale */
+.hero .container .hero-content .hero-main-title {
+  color: #ffffff !important;
+}
+
+.hero .container .hero-content .hero-main-title:hover {
+  color: #ffffff !important;
+}
+
 /* Classe pour assurer la lisibilité sur fond clair */
 .hero-main-title.light-background {
   color: var(--text-dark);
