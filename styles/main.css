@@ -524,7 +524,7 @@ p {
 }
 
 .mobile-menu-toggle {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 4px;
   padding: var(--space-sm);
