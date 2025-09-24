@@ -2413,9 +2413,7 @@ textarea.form-input {
   }
   
   .mobile-menu-toggle {
-    display: flex !important;
-    background: red !important;
-    border: 2px solid yellow !important;
+    display: flex;
   }
   
   .mobile-menu-toggle.active span:nth-child(1) {

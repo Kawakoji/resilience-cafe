@@ -174,6 +174,16 @@ function initializeMobileMenu() {
             console.log('New classes:', mobileNavMenu.className);
             console.log('Menu active:', mobileNavMenu.classList.contains('active'));
             console.log('Menu display style:', window.getComputedStyle(mobileNavMenu).display);
+            
+            // Test temporaire - forcer l'affichage
+            if (mobileNavMenu.classList.contains('active')) {
+                mobileNavMenu.style.display = 'flex';
+                mobileNavMenu.style.background = 'red';
+                console.log('Menu forcé en display: flex avec fond rouge');
+            } else {
+                mobileNavMenu.style.display = 'none';
+                mobileNavMenu.style.background = '';
+            }
         });
         
         // Close menu when clicking on nav links
