@@ -156,13 +156,7 @@ function initializeMobileMenu() {
         console.error('Mobile nav menu NOT FOUND!');
     }
     
-    // Test temporaire - forcer l'affichage du menu pour debug
-    if (mobileNavMenu) {
-        mobileNavMenu.classList.add('test-visible');
-        setTimeout(() => {
-            mobileNavMenu.classList.remove('test-visible');
-        }, 3000);
-    }
+    // Test temporaire supprimé
     
     if (mobileToggle && mobileNavMenu) {
         console.log('Adding click listener to mobile toggle');
