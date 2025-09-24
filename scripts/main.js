@@ -175,10 +175,46 @@ function initializeMobileMenu() {
             console.log('Menu active:', mobileNavMenu.classList.contains('active'));
             console.log('Menu display style:', window.getComputedStyle(mobileNavMenu).display);
             
-            // Forcer l'affichage du menu
+            // Solution qui fonctionne à coup sûr
             if (mobileNavMenu.classList.contains('active')) {
-                mobileNavMenu.style.display = 'flex';
-                console.log('Menu affiché');
+                mobileNavMenu.style.cssText = `
+                    position: fixed !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    right: 0 !important;
+                    bottom: 0 !important;
+                    width: 100vw !important;
+                    height: 100vh !important;
+                    background: rgba(139, 69, 19, 0.95) !important;
+                    backdrop-filter: blur(10px) !important;
+                    z-index: 9999 !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    justify-content: center !important;
+                    align-items: center !important;
+                    list-style: none !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                `;
+                
+                // Styliser les liens du menu
+                const navLinks = mobileNavMenu.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.style.cssText = `
+                        color: white !important;
+                        font-size: 24px !important;
+                        font-weight: 600 !important;
+                        text-decoration: none !important;
+                        padding: 15px 30px !important;
+                        border-radius: 10px !important;
+                        display: block !important;
+                        transition: all 0.3s ease !important;
+                        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+                        margin: 10px 0 !important;
+                    `;
+                });
+                
+                console.log('Menu affiché avec styles forcés');
             } else {
                 mobileNavMenu.style.display = 'none';
                 console.log('Menu caché');
