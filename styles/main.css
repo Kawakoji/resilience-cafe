@@ -2413,7 +2413,9 @@ textarea.form-input {
   }
   
   .mobile-menu-toggle {
-    display: flex;
+    display: flex !important;
+    background: red !important;
+    border: 2px solid yellow !important;
   }
   
   .mobile-menu-toggle.active span:nth-child(1) {
