@@ -676,6 +676,26 @@ p {
 /* Mobile Navigation - Hidden on desktop */
 .mobile-nav {
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(139, 69, 19, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.mobile-nav.active {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ===== HERO SECTION - MINIMAL & CLEAN ===== */
@@ -2387,9 +2407,7 @@ textarea.form-input {
     display: block;
   }
   
-  .mobile-nav {
-    display: none; /* Caché par défaut, affiché seulement avec la classe .active */
-  }
+  /* Styles mobile-nav gérés plus haut dans le fichier */
   
   /* Mobile Header States */
   .header.with-background {
@@ -2438,29 +2456,7 @@ textarea.form-input {
     overflow: hidden;
   }
 
-  /* Mobile menu ouvert - fond visible */
-  .mobile-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(139, 69, 19, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .mobile-nav.active {
-    opacity: 1;
-    visibility: visible;
-  }
+  /* Styles du menu mobile gérés plus haut dans le fichier */
 
   .mobile-nav .nav-menu {
     display: flex;
