@@ -267,28 +267,29 @@ p {
   filter: drop-shadow(0 2px 4px rgba(255, 127, 80, 0.5));
 }
 
-/* Exception pour le hero subtitle - couleur dorée */
+/* Exception pour le hero subtitle - couleur dorée avec effet scintillant permanent */
 .hero-subtitle-container .amour-highlight {
   color: #f5deb3 !important;
-  background: linear-gradient(135deg, #f5deb3 0%, #daa520 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  text-shadow: none !important;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
-  transform: none !important;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-/* Effet hover pour le hero subtitle */
-.hero-subtitle-container .amour-highlight:hover {
   background: linear-gradient(135deg, #ffd700 0%, #ffed4e 25%, #f5deb3 50%, #daa520 75%, #b8860b 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
+  text-shadow: none !important;
   filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.6)) brightness(1.2) !important;
+  transform: none !important;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
   animation: sparkle 1.5s ease-in-out infinite;
+}
+
+/* Effet hover pour le hero subtitle - plus intense */
+.hero-subtitle-container .amour-highlight:hover {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 20%, #fff700 40%, #ffed4e 60%, #ffd700 80%, #b8860b 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(0 6px 12px rgba(255, 215, 0, 0.8)) brightness(1.4) !important;
+  animation: sparkle 0.8s ease-in-out infinite;
 }
 
 .amour-highlight::after {
@@ -2655,25 +2656,26 @@ textarea.form-input {
   .amour-highlight {
     font-size: 1.4em;
     color: #f5deb3 !important;
-    background: linear-gradient(135deg, #f5deb3 0%, #daa520 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    text-shadow: none !important;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-  }
-
-  .amour-highlight:hover {
     background: linear-gradient(135deg, #ffd700 0%, #ffed4e 25%, #f5deb3 50%, #daa520 75%, #b8860b 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
+    text-shadow: none !important;
     filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.6)) brightness(1.2) !important;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
     animation: sparkle 1.5s ease-in-out infinite;
+  }
+
+  .amour-highlight:hover {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 20%, #fff700 40%, #ffed4e 60%, #ffd700 80%, #b8860b 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 6px 12px rgba(255, 215, 0, 0.8)) brightness(1.4) !important;
+    animation: sparkle 0.8s ease-in-out infinite;
   }
   
   .hero-video {
