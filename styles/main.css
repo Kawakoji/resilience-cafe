@@ -676,54 +676,12 @@ p {
   display: none;
 }
 
-/* Mobile Navigation - Version propre et fonctionnelle */
+/* Mobile Navigation - Caché sur desktop */
 .mobile-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(139, 69, 19, 0.95);
-  backdrop-filter: blur(10px);
-  z-index: 9999;
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
-.mobile-nav.active {
-  display: flex;
-}
-
-.mobile-nav .nav-item {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.mobile-nav .nav-link {
-  color: white;
-  font-size: 24px;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 15px 30px;
-  border-radius: 10px;
-  display: block;
-  transition: all 0.3s ease;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.mobile-nav .nav-link:hover,
-.mobile-nav .nav-link.active {
-  background: rgba(255, 255, 255, 0.1);
-  color: #f5deb3;
-  transform: scale(1.05);
-}
+/* Styles du menu mobile gérés dans la media query mobile */
 
 /* ===== HERO SECTION - MINIMAL & CLEAN ===== */
 .hero {
@@ -1681,6 +1639,55 @@ p {
 }
 
 @media (max-width: 768px) {
+  /* Mobile Navigation - Visible seulement sur mobile */
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(139, 69, 19, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-nav.active {
+    display: flex;
+  }
+
+  .mobile-nav .nav-item {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .mobile-nav .nav-link {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    display: block;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .mobile-nav .nav-link:hover,
+  .mobile-nav .nav-link.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f5deb3;
+    transform: scale(1.05);
+  }
+
   .instagram-carousel-section {
     padding: var(--space-5xl) 20px; /* Add horizontal padding to section */
   }
