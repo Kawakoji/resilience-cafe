@@ -683,17 +683,19 @@ p {
   bottom: 0;
   background: rgba(139, 69, 19, 0.95);
   backdrop-filter: blur(10px);
-  z-index: 1000;
+  z-index: 9999;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
+  width: 100vw;
+  height: 100vh;
 }
 
 .mobile-nav.active {
-  display: flex;
+  display: flex !important;
   opacity: 1;
   visibility: visible;
 }
