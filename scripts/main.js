@@ -162,6 +162,7 @@ function initializeMobileMenu() {
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768 && mobileNavMenu.classList.contains('active')) {
             mobileNavMenu.style.display = 'none';
+            mobileNavMenu.style.cssText = ''; // Réinitialiser les styles
             mobileNavMenu.classList.remove('active');
             mobileToggle.classList.remove('active');
             document.body.classList.remove('menu-open');
@@ -239,8 +240,12 @@ function initializeMobileMenu() {
                 
                 console.log('Menu affiché avec styles forcés');
             } else {
+                // Fermer le menu et réinitialiser les styles
                 mobileNavMenu.style.display = 'none';
-                console.log('Menu caché');
+                mobileNavMenu.style.cssText = ''; // Réinitialiser tous les styles
+                mobileToggle.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                console.log('Menu fermé et styles réinitialisés');
             }
         });
         
@@ -248,8 +253,11 @@ function initializeMobileMenu() {
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileNavMenu.classList.remove('active');
+                mobileNavMenu.style.display = 'none';
+                mobileNavMenu.style.cssText = ''; // Réinitialiser les styles
                 mobileToggle.classList.remove('active');
                 document.body.classList.remove('menu-open');
+                console.log('Menu fermé par clic sur lien');
             });
         });
         
@@ -257,8 +265,11 @@ function initializeMobileMenu() {
         document.addEventListener('click', (e) => {
             if (!mobileNavMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
                 mobileNavMenu.classList.remove('active');
+                mobileNavMenu.style.display = 'none';
+                mobileNavMenu.style.cssText = ''; // Réinitialiser les styles
                 mobileToggle.classList.remove('active');
                 document.body.classList.remove('menu-open');
+                console.log('Menu fermé par clic extérieur');
             }
         });
     }
