@@ -2388,7 +2388,7 @@ textarea.form-input {
   }
   
   .mobile-nav {
-    display: flex;
+    display: none; /* Caché par défaut, affiché seulement avec la classe .active */
   }
   
   /* Mobile Header States */
@@ -2436,6 +2436,61 @@ textarea.form-input {
   
   body.menu-open {
     overflow: hidden;
+  }
+
+  /* Mobile menu ouvert - fond visible */
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(139, 69, 19, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .mobile-nav.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-nav .nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-nav .nav-item {
+    text-align: center;
+  }
+
+  .mobile-nav .nav-link {
+    color: white !important;
+    font-size: var(--fs-xl);
+    font-weight: 600;
+    text-decoration: none;
+    padding: var(--space-md);
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease-in-out;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .mobile-nav .nav-link:hover,
+  .mobile-nav .nav-link.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f5deb3 !important;
+    transform: scale(1.05);
   }
   
   .hero {
