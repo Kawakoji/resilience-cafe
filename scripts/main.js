@@ -175,14 +175,13 @@ function initializeMobileMenu() {
             console.log('Menu active:', mobileNavMenu.classList.contains('active'));
             console.log('Menu display style:', window.getComputedStyle(mobileNavMenu).display);
             
-            // Test temporaire - forcer l'affichage
+            // Forcer l'affichage du menu
             if (mobileNavMenu.classList.contains('active')) {
                 mobileNavMenu.style.display = 'flex';
-                mobileNavMenu.style.background = 'red';
-                console.log('Menu forcé en display: flex avec fond rouge');
+                console.log('Menu affiché');
             } else {
                 mobileNavMenu.style.display = 'none';
-                mobileNavMenu.style.background = '';
+                console.log('Menu caché');
             }
         });
         
