@@ -132,13 +132,23 @@ function initializeNavigation() {
 function initializeMobileMenu() {
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const mobileNavMenu = document.querySelector('.mobile-nav');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.mobile-nav .nav-link');
+    
+    console.log('Mobile toggle:', mobileToggle);
+    console.log('Mobile nav menu:', mobileNavMenu);
     
     if (mobileToggle && mobileNavMenu) {
-        mobileToggle.addEventListener('click', () => {
+        mobileToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('Toggle clicked');
+            
             mobileNavMenu.classList.toggle('active');
             mobileToggle.classList.toggle('active');
             document.body.classList.toggle('menu-open');
+            
+            console.log('Menu active:', mobileNavMenu.classList.contains('active'));
         });
         
         // Close menu when clicking on nav links
@@ -152,12 +162,14 @@ function initializeMobileMenu() {
         
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
-                navMenu.classList.remove('active');
+            if (!mobileNavMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+                mobileNavMenu.classList.remove('active');
                 mobileToggle.classList.remove('active');
                 document.body.classList.remove('menu-open');
             }
         });
+    } else {
+        console.error('Mobile menu elements not found');
     }
 }
 
