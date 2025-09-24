@@ -166,6 +166,15 @@ function initializeMobileMenu() {
             mobileNavMenu.classList.remove('active');
             mobileToggle.classList.remove('active');
             document.body.classList.remove('menu-open');
+            
+            // Réinitialiser les styles du bouton hamburger
+            if (mobileToggle) {
+                mobileToggle.style.zIndex = '';
+                mobileToggle.style.position = '';
+                mobileToggle.style.top = '';
+                mobileToggle.style.right = '';
+            }
+            
             console.log('Menu fermé automatiquement - passage en desktop');
         }
     });
@@ -201,7 +210,7 @@ function initializeMobileMenu() {
                         height: 100vh !important;
                         background: rgba(139, 69, 19, 0.95) !important;
                         backdrop-filter: blur(10px) !important;
-                        z-index: 9999 !important;
+                        z-index: 9998 !important;
                         display: flex !important;
                         flex-direction: column !important;
                         justify-content: space-evenly !important;
@@ -211,6 +220,14 @@ function initializeMobileMenu() {
                         padding: 10px !important;
                         overflow: hidden !important;
                     `;
+                    
+                    // S'assurer que le bouton hamburger reste visible
+                    if (mobileToggle) {
+                        mobileToggle.style.zIndex = '9999';
+                        mobileToggle.style.position = 'fixed';
+                        mobileToggle.style.top = '20px';
+                        mobileToggle.style.right = '20px';
+                    }
                 } else {
                     // Sur desktop, cacher le menu
                     mobileNavMenu.style.display = 'none';
@@ -245,6 +262,15 @@ function initializeMobileMenu() {
                 mobileNavMenu.style.cssText = ''; // Réinitialiser tous les styles
                 mobileToggle.classList.remove('active');
                 document.body.classList.remove('menu-open');
+                
+                // Réinitialiser les styles du bouton hamburger
+                if (mobileToggle) {
+                    mobileToggle.style.zIndex = '';
+                    mobileToggle.style.position = '';
+                    mobileToggle.style.top = '';
+                    mobileToggle.style.right = '';
+                }
+                
                 console.log('Menu fermé et styles réinitialisés');
             }
         });
@@ -257,6 +283,15 @@ function initializeMobileMenu() {
                 mobileNavMenu.style.cssText = ''; // Réinitialiser les styles
                 mobileToggle.classList.remove('active');
                 document.body.classList.remove('menu-open');
+                
+                // Réinitialiser les styles du bouton hamburger
+                if (mobileToggle) {
+                    mobileToggle.style.zIndex = '';
+                    mobileToggle.style.position = '';
+                    mobileToggle.style.top = '';
+                    mobileToggle.style.right = '';
+                }
+                
                 console.log('Menu fermé par clic sur lien');
             });
         });
@@ -269,6 +304,15 @@ function initializeMobileMenu() {
                 mobileNavMenu.style.cssText = ''; // Réinitialiser les styles
                 mobileToggle.classList.remove('active');
                 document.body.classList.remove('menu-open');
+                
+                // Réinitialiser les styles du bouton hamburger
+                if (mobileToggle) {
+                    mobileToggle.style.zIndex = '';
+                    mobileToggle.style.position = '';
+                    mobileToggle.style.top = '';
+                    mobileToggle.style.right = '';
+                }
+                
                 console.log('Menu fermé par clic extérieur');
             }
         });
