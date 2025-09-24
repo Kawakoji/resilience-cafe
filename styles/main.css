@@ -2637,6 +2637,13 @@ textarea.form-input {
   
   .amour-highlight {
     font-size: 1.4em;
+    color: #f5deb3 !important;
+    background: linear-gradient(135deg, #f5deb3 0%, #daa520 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-shadow: none !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
   }
   
   .hero-video {
@@ -2738,6 +2745,19 @@ textarea.form-input {
   transform: none !important;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+/* ===== AMOUR HIGHLIGHT - COULEUR DORÉE UNIFIÉE ===== */
+/* Force la couleur dorée sur toutes les versions */
+.hero-subtitle-container .amour-highlight,
+.hero .hero-background .hero-overlay .hero-subtitle-container .amour-highlight {
+  color: #f5deb3 !important;
+  background: linear-gradient(135deg, #f5deb3 0%, #daa520 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-shadow: none !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
 }
 
 /* Classe pour assurer la lisibilité sur fond clair */
