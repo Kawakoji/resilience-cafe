@@ -2646,8 +2646,8 @@ textarea.form-input {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    display: inline-block;
     position: relative;
-    overflow: hidden;
   }
 
   .amour-highlight:hover {
@@ -2656,7 +2656,6 @@ textarea.form-input {
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
     filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.6)) brightness(1.2) !important;
-    transform: scale(1.05);
     animation: sparkle 1.5s ease-in-out infinite;
   }
   
@@ -2774,8 +2773,8 @@ textarea.form-input {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  display: inline-block;
   position: relative;
-  overflow: hidden;
 }
 
 /* ===== EFFET SCINTILLANT AU HOVER ===== */
@@ -2786,7 +2785,6 @@ textarea.form-input {
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
   filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.6)) brightness(1.2) !important;
-  transform: scale(1.05);
   animation: sparkle 1.5s ease-in-out infinite;
 }
 
