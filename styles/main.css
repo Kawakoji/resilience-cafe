@@ -846,11 +846,13 @@ p {
   }
 
   .hero-subtitle-container {
-    position: absolute;
-    bottom: var(--space-lg);
-    left: var(--space-lg);
-    z-index: 3; /* Au-dessus de l'overlay */
-    transform: none; /* S'assurer qu'il n'y a pas de transformation */
+    position: absolute !important;
+    bottom: var(--space-lg) !important;
+    left: var(--space-lg) !important;
+    z-index: 10 !important; /* Z-index très élevé pour être au-dessus de tout */
+    transform: none !important; /* S'assurer qu'il n'y a pas de transformation */
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .hero-subtitle-container .hero-subtitle {
@@ -2462,8 +2464,10 @@ textarea.form-input {
 
   /* Mobile version du sous-titre - positionnement en bas à gauche */
   .hero-subtitle-container {
-    bottom: var(--space-md);
-    left: var(--space-md);
+    bottom: var(--space-md) !important;
+    left: var(--space-md) !important;
+    position: absolute !important;
+    z-index: 10 !important;
   }
 
   .hero-subtitle-container .hero-subtitle {
@@ -2614,8 +2618,10 @@ textarea.form-input {
 
   /* Version très mobile du sous-titre - positionnement en bas à gauche */
   .hero-subtitle-container {
-    bottom: var(--space-sm);
-    left: var(--space-sm);
+    bottom: var(--space-sm) !important;
+    left: var(--space-sm) !important;
+    position: absolute !important;
+    z-index: 10 !important;
   }
 
   .hero-subtitle-container .hero-subtitle {
@@ -2720,6 +2726,18 @@ textarea.form-input {
 
 .hero .container .hero-content .hero-main-title:hover {
   color: #ffffff !important;
+}
+
+/* ===== SOUS-TITRE - POSITIONNEMENT FORCÉ ===== */
+/* Force le positionnement en bas à gauche avec spécificité maximale */
+.hero .hero-background .hero-overlay .hero-subtitle-container {
+  position: absolute !important;
+  bottom: var(--space-lg) !important;
+  left: var(--space-lg) !important;
+  z-index: 10 !important;
+  transform: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Classe pour assurer la lisibilité sur fond clair */
