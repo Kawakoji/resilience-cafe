@@ -2458,6 +2458,17 @@ textarea.form-input {
     display: block;
     text-align: center;
   }
+
+  /* Mobile version du sous-titre - positionnement en bas à gauche */
+  .hero-subtitle-container {
+    bottom: var(--space-md);
+    left: var(--space-md);
+  }
+
+  .hero-subtitle-container .hero-subtitle {
+    font-size: var(--fs-base);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
   
   .hero-video {
     filter: sepia(20%) saturate(130%) brightness(85%) contrast(115%);
@@ -2597,6 +2608,17 @@ textarea.form-input {
     margin: 0 auto;
     display: block;
     text-align: center;
+  }
+
+  /* Version très mobile du sous-titre - positionnement en bas à gauche */
+  .hero-subtitle-container {
+    bottom: var(--space-sm);
+    left: var(--space-sm);
+  }
+
+  .hero-subtitle-container .hero-subtitle {
+    font-size: var(--fs-sm);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   }
   
   .hero-subtitle {
