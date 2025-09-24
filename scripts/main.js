@@ -203,12 +203,12 @@ function initializeMobileMenu() {
                         z-index: 9999 !important;
                         display: flex !important;
                         flex-direction: column !important;
-                        justify-content: center !important;
+                        justify-content: space-evenly !important;
                         align-items: center !important;
                         list-style: none !important;
                         margin: 0 !important;
-                        padding: 20px !important;
-                        overflow-y: auto !important;
+                        padding: 10px !important;
+                        overflow: hidden !important;
                     `;
                 } else {
                     // Sur desktop, cacher le menu
@@ -224,15 +224,16 @@ function initializeMobileMenu() {
                 navLinks.forEach(link => {
                     link.style.cssText = `
                         color: white !important;
-                        font-size: 24px !important;
+                        font-size: 18px !important;
                         font-weight: 600 !important;
                         text-decoration: none !important;
-                        padding: 15px 30px !important;
-                        border-radius: 10px !important;
+                        padding: 10px 20px !important;
+                        border-radius: 8px !important;
                         display: block !important;
                         transition: all 0.3s ease !important;
                         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
-                        margin: 10px 0 !important;
+                        margin: 5px 0 !important;
+                        flex-shrink: 0 !important;
                     `;
                 });
                 
