@@ -134,11 +134,24 @@ function initializeMobileMenu() {
     const mobileNavMenu = document.querySelector('.mobile-nav');
     const navLinks = document.querySelectorAll('.nav-link');
     
+    console.log('Mobile menu init:', { mobileToggle, mobileNavMenu, navLinksCount: navLinks.length });
+    
+    // Test temporaire - forcer l'affichage du menu pour debug
+    if (mobileNavMenu) {
+        mobileNavMenu.classList.add('test-visible');
+        setTimeout(() => {
+            mobileNavMenu.classList.remove('test-visible');
+        }, 3000);
+    }
+    
     if (mobileToggle && mobileNavMenu) {
-        mobileToggle.addEventListener('click', () => {
+        mobileToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Menu toggle clicked');
             mobileNavMenu.classList.toggle('active');
             mobileToggle.classList.toggle('active');
             document.body.classList.toggle('menu-open');
+            console.log('Menu active:', mobileNavMenu.classList.contains('active'));
         });
         
         // Close menu when clicking on nav links

@@ -673,26 +673,20 @@ p {
   display: none;
 }
 
-/* Mobile Navigation - Hidden on desktop */
+/* Mobile Navigation - Solution simple et robuste */
 .mobile-nav {
-  display: none !important;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100vw;
+  height: 100vh;
   background: rgba(139, 69, 19, 0.95);
   backdrop-filter: blur(10px);
   z-index: 9999;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
-  transform: translateY(-20px);
-  width: 100vw;
-  height: 100vh;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -700,38 +694,27 @@ p {
 
 .mobile-nav.active {
   display: flex !important;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+}
+
+/* Test pour forcer l'affichage - à supprimer après test */
+.mobile-nav.test-visible {
+  display: flex !important;
+  background: red !important;
 }
 
 .mobile-nav .nav-item {
   text-align: center;
-  margin: var(--space-md) 0;
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  margin: 20px 0;
 }
-
-.mobile-nav.active .nav-item {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.mobile-nav.active .nav-item:nth-child(1) { transition-delay: 0.1s; }
-.mobile-nav.active .nav-item:nth-child(2) { transition-delay: 0.2s; }
-.mobile-nav.active .nav-item:nth-child(3) { transition-delay: 0.3s; }
-.mobile-nav.active .nav-item:nth-child(4) { transition-delay: 0.4s; }
-.mobile-nav.active .nav-item:nth-child(5) { transition-delay: 0.5s; }
 
 .mobile-nav .nav-link {
-  color: white !important;
-  font-size: var(--fs-xl);
+  color: white;
+  font-size: 24px;
   font-weight: 600;
   text-decoration: none;
-  padding: var(--space-md);
-  border-radius: var(--border-radius-md);
-  transition: all 0.3s ease-in-out;
+  padding: 15px 30px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   display: block;
 }
@@ -739,7 +722,7 @@ p {
 .mobile-nav .nav-link:hover,
 .mobile-nav .nav-link.active {
   background: rgba(255, 255, 255, 0.1);
-  color: #f5deb3 !important;
+  color: #f5deb3;
   transform: scale(1.05);
 }
 
