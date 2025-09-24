@@ -136,24 +136,37 @@ function initializeMobileMenu() {
     
     console.log('Mobile toggle:', mobileToggle);
     console.log('Mobile nav menu:', mobileNavMenu);
+    console.log('Nav links:', navLinks);
     
     if (mobileToggle && mobileNavMenu) {
+        console.log('Initializing mobile menu...');
+        
         mobileToggle.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
             
-            console.log('Toggle clicked');
+            console.log('Toggle clicked - current state:', mobileNavMenu.classList.contains('active'));
             
-            mobileNavMenu.classList.toggle('active');
-            mobileToggle.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
+            const isActive = mobileNavMenu.classList.contains('active');
             
-            console.log('Menu active:', mobileNavMenu.classList.contains('active'));
+            if (isActive) {
+                mobileNavMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                console.log('Menu closed');
+            } else {
+                mobileNavMenu.classList.add('active');
+                mobileToggle.classList.add('active');
+                document.body.classList.add('menu-open');
+                console.log('Menu opened');
+            }
         });
         
         // Close menu when clicking on nav links
-        navLinks.forEach(link => {
+        navLinks.forEach((link, index) => {
+            console.log(`Adding click listener to link ${index}:`, link);
             link.addEventListener('click', () => {
+                console.log('Link clicked, closing menu');
                 mobileNavMenu.classList.remove('active');
                 mobileToggle.classList.remove('active');
                 document.body.classList.remove('menu-open');
@@ -163,13 +176,36 @@ function initializeMobileMenu() {
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!mobileNavMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
-                mobileNavMenu.classList.remove('active');
-                mobileToggle.classList.remove('active');
-                document.body.classList.remove('menu-open');
+                if (mobileNavMenu.classList.contains('active')) {
+                    console.log('Click outside, closing menu');
+                    mobileNavMenu.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
             }
         });
+        
+        console.log('Mobile menu initialized successfully');
+        
+        // Test function - add to window for debugging
+        window.testMobileMenu = function() {
+            console.log('Testing mobile menu...');
+            mobileNavMenu.classList.add('test-visible');
+            setTimeout(() => {
+                mobileNavMenu.classList.remove('test-visible');
+            }, 3000);
+        };
+        
+        // Auto-test after 2 seconds
+        setTimeout(() => {
+            console.log('Auto-testing mobile menu in 2 seconds...');
+            window.testMobileMenu();
+        }, 2000);
+        
     } else {
-        console.error('Mobile menu elements not found');
+        console.error('Mobile menu elements not found:');
+        console.error('Toggle:', mobileToggle);
+        console.error('Menu:', mobileNavMenu);
     }
 }
 

@@ -705,6 +705,14 @@ p {
   pointer-events: none;
 }
 
+/* Test: Force visibility for debugging */
+.mobile-nav.test-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
 .mobile-nav.active {
   opacity: 1;
   visibility: visible;
@@ -2530,7 +2538,7 @@ textarea.form-input {
   
   /* S'assurer que le menu mobile est visible sur mobile */
   .mobile-nav {
-    display: none !important;
+    display: flex !important;
   }
   
   .mobile-nav.active {
