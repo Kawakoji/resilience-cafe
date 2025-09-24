@@ -815,7 +815,7 @@ p {
     font-size: clamp(3rem, 6vw, 6rem);
     font-weight: 600;
     letter-spacing: 0.1em; /* Tracking réduit pour que tout le texte soit visible */
-    color: white;
+    color: #ffffff !important; /* Blanc pur pour le titre */
     text-transform: uppercase;
     margin: 0 auto;
     text-shadow: 
@@ -837,7 +837,7 @@ p {
 
   .hero-main-title:hover {
     transform: scale(1.05);
-    color: #f5f5dc;
+    color: #ffffff !important; /* Reste blanc au hover */
     text-shadow: 
       0 6px 12px rgba(0, 0, 0, 0.5),
       0 3px 6px rgba(0, 0, 0, 0.3);
@@ -853,7 +853,7 @@ p {
   }
 
   .hero-subtitle-container .hero-subtitle {
-    color: white;
+    color: #ffffff !important; /* Blanc pur pour le sous-titre */
     font-size: var(--fs-lg);
     font-weight: 500;
     margin: 0;
@@ -2466,6 +2466,7 @@ textarea.form-input {
   }
 
   .hero-subtitle-container .hero-subtitle {
+    color: #ffffff !important; /* Blanc pur pour mobile */
     font-size: var(--fs-base);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
@@ -2617,6 +2618,7 @@ textarea.form-input {
   }
 
   .hero-subtitle-container .hero-subtitle {
+    color: #ffffff !important; /* Blanc pur pour très mobile */
     font-size: var(--fs-sm);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   }
